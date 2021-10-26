@@ -1,0 +1,37 @@
+body{
+    background-color: rgb(245, 240, 240) ;
+    font-family: 'Nunito Sans', sans-serif;
+}
+form{
+    background-color: #fff;
+    padding:5px 45px;
+    box-shadow: 2px 2px 1px grey;
+}
+.form-input {
+    display: flex;
+    flex-direction: column;
+}
+h1, h3{
+    font-weight: 600;
+}
+button{
+    border: none;
+    border-radius: 3px;
+}
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+td,
+th {
+    border: 1px solid #0d6efd;
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even) {
+    background-color: #aec6eb;
+    color: rgb(59, 58, 58);
+}

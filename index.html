@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@200;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./bootstrap.min.css">
+    <link rel="stylesheet" href="./style.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="container">
+        <div id="app" class="form">
+            <div class="mt-4">
+                <div class="mt-3" v-if="greeting > 12">
+                    <h1> Good Evening, It is {{greeting}}pm</h1>
+                </div>
+                <div v-else>
+                    <h1>Good Day, It is {{greeting}}am</h1>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12 col-lg-4">
+                    <form>
+                        <h1 class="fw-bold my-5 text-center text-uppercase">Login Form</h1>
+                        <div class="form-input my-3">
+                            <label for="name" class="fw-bold fs-6">Name</label>
+                            <input type="text" placeholder="Enter name" v-model="formData.name">
+                        </div>
+                        <div class="form-input my-3">
+                            <label for="Username" class="fw-bold fs-6">Username</label>
+                            <input type="text" placeholder="Enter username" v-model="formData.username">
+                        </div>
+                        <div class="form-input my-3">
+                            <label for="email" class="fw-bold fs-6">Email</label>
+                            <input type="email" placeholder="Enter email address" v-model="formData.email">
+                        </div>
+                        <div class="form-input my-3">
+                            <label for="phoneNumber" class="fw-bold fs-6">Phone Number</label>
+                            <input type="phone" placeholder="Enter phone number" v-model="formData.phoneNumber">
+                        </div>
+                        <div class="text-center">
+                            <button @click.prevent="submit"
+                                class="bg-primary fw-bold mt-3 mb-5 py-2 px-3 text-uppercase text-white">Submit</button>
+                        </div>
+                    </form>
+                </div>
+                <div class="col-12 col-lg-8 mt-4">
+                    <table>
+                        <tr>
+                            <th>Name</th>
+                            <th>Username</th>
+                            <th>Email</th>
+                            <th>Phone Number</th>
+                        </tr>
+                        <tr v-for="data in tableData">
+                            <th>{{data.name}}</th>
+                            <th>{{data.username}}</th>
+                            <th>{{data.email}}</th>
+                            <th>{{data.phoneNumber}}</th>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <hr>
+    <div class="container">
+        <div class="row">
+            <h1 class="text-center">My Personal Details</h1>
+        </div>
+    </div>
+    <div id="app1">
+        <ul>
+            <li v-for="detail of details">
+                <p>{{detail.name}}</p>
+                <p>{{detail.address}}</p>
+                <p>{{detail.occupation}}</p>
+                <p>{{detail.food}}</p>
+                <p>{{detail.countries}}</p>
+            </li>
+        </ul>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script src="./script.js"></script>
+</body>
+
+</html>
